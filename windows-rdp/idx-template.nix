@@ -13,4 +13,4 @@
     # We can now use "npm"
    
   ''
-}
+};
