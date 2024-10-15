@@ -10,6 +10,5 @@
     bootstrap = ''
         mkdir "$out"/.idx
         cp ${./dev.nix} "$out"/.idx/dev.nix
-        install --mode u+rw ${./dev.nix} "$out"/.idx/dev.nix
     '';
 }
