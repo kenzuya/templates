@@ -1,16 +1,15 @@
-# idx-template.nix
-{pkgs}: {
-  packages = [
-    # Note, this is NOT the list of packages available to the workspace once
-    # it's created. Those go in .idx/dev.nix
-    pkgs.nodejs
-    pkgs.tailscale
-    pkgs.curl
-  ];
-
-  bootstrap = ''
-    mkdir "$out"
-    # We can now use "npm"
-   
-  ''
-};
+{pkgs, ...}: {
+    packages = [
+        pkgs.curl
+        pkgs.gnutar
+        pkgs.xz
+        pkgs.git
+        pkgs.busybox
+        pkgs.tailscale
+    ];
+    bootstrap = ''
+        mkdir "$out"/.idx
+        cp ${./dev.nix} "$out"/.idx/dev.nix
+        install --mode u+rw ${./dev.nix} "$out"/.idx/dev.nix
+    '';
+}
