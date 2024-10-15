@@ -1,12 +1,23 @@
 {
-    "name": "Windows RDP",
-    "description": "Windows RDP create template",
+    "name": "Hono",
+    "description": "Fast, lightweight, built on Web Standards. Support for any JavaScript runtime.",
     "categories": [
-     "Desktop"
+      "Web app",
+      "Backend"
     ],
-    "icon": "https://play-lh.googleusercontent.com/vNxSIZtXz4ppn1HNAZmynQy--JUzmMNzBSgPDLYjn4FAxNv3DZxlNZOZw1m251UDksY=w240-h480-rw",
-    "publisher": "kenzuya",
-    "host": {
-     "virtualization": true
-    }
-   }
+    "icon": "",
+    "website": "https://hono.dev/",
+    "publisher": "David East",
+    "params": [
+      {
+        "id": "manager",
+        "name": "Package Manager / Runtime",
+        "type": "enum",
+        "default": "npm",
+        "options": {
+          "npm": "npm",
+          "bun": "bun"
+        }
+      }
+    ]
+  }
