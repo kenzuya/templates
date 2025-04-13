@@ -1,1 +1,47 @@
+version: "3.7"
+services:
+  tailscale:
+    image: tailscale/tailscale:latest
+    container_name: tailscale
+    network_mode: "host" # Uses the network namespace of warp
+    environment:
+      TS_AUTHKEY: "tskey-auth-kjx7E8faHS11CNTRL-65Vc356BX9JitLf9K4HZAJXiYbCAeVLK"
+      TS_EXTRA_ARGS: "--ssh"
+      TS_STATE_DIR: "/storage"
+      TS_HOSTNAME: "windows-rdp-2"
+    volumes:
+      - ${PWD}/tailscale/state:/storage
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+      - sys_module
+    restart: unless-stopped
 
+  windows:
+    image: dockurr/windows
+    container_name: windows
+    network_mode: "bridge"
+    ports:
+      - 8006:8006
+      - 3389:3389/tcp
+      - 3389:3389/udp
+    environment:
+      VERSION: "https://download947.mediafire.com/kzd2evx6g4tgaJPxBQ7zJh1y3P1NYpY_PGIdX2r3JxQMWbRJhfPNqY70BmxfwhVqQ-ydQsQobtDjSHqjLqLmxiL4pt8W97lQIQrsjNnh95H3KX4DVZLbi4_7pSKqD_BL4ZAiCZiTu2dHvevKYnJXLWvKOKw0T4wn5Xu3_BKoYvhVP3OX/m5dn01fb085dqmq/Win10SUPERLITE+V.6.iso"
+      MANUAL: "Y"
+      RAM_SIZE: "6G"
+      CPU_CORES: "8"
+      DISK_SIZE: "27G"
+      DISK2_SIZE: "32G"
+      DISK3_SIZE: "32G"
+    devices:
+      - /dev/kvm
+      - /dev/net/tun
+    volumes:
+      - ${PWD}/win10:/storage
+      - /tmp:/shared
+      - /var/storage2:/storage2
+      - /run/storage3:/storage3
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+    stop_grace_period: 1s
