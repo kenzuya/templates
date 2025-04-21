@@ -1,0 +1,47 @@
+name: ubuntu-server
+services:
+  server:
+    image: qemux/qemu
+    container_name: server
+    environment:
+      BOOT: "ubuntus"
+      VMX: "Y"
+      RAM_SIZE: "50G"
+      DISK_SIZE: "185G"
+      CPU_CORES: "16"
+    devices:
+      - /dev/kvm
+      - /dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8006:8006
+      - 2204:22
+    volumes:
+      - ./server:/storage
+    restart: unless-stopped
+    stop_grace_period: 2m
+  big-bear-jlesage-firefox:
+    cpu_shares: 90
+    container_name: big-bear-jlesage-firefox
+    deploy:
+      resources:
+        limits:
+          memory: 2048M
+    environment:
+      - VNC_PASSWORD=casaos
+    hostname: big-bear-jlesage-firefox
+    image: jlesage/firefox:v24.12.1
+    labels:
+      icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/firefox.png
+    ports:
+      - 5800:5800
+    restart: unless-stopped
+    volumes:
+      - ./firefox:/config
+    networks:
+      - default
+    privileged: false
+networks:
+  default:
+    name: big-bear-jlesage-firefox_default
