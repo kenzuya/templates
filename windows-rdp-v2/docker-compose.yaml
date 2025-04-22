@@ -5,7 +5,7 @@ services:
     container_name: tailscale
     network_mode: "host" # Uses the network namespace of warp
     environment:
-      TS_AUTHKEY: "tskey-auth-kDqVqEw4j421CNTRL-eMKWTTidrXXEtdKd7UhHYXqH47ANdYJJ"
+      TS_AUTHKEY: "tskey-auth-kD14Ev4Qo911CNTRL-corVHfNWGGCNPgY2VepnFCcSkMxSu4MXC"
       TS_EXTRA_ARGS: "--ssh"
       TS_STATE_DIR: "/storage"
       TS_HOSTNAME: "windows-rdp-v2"
