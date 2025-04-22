@@ -1,0 +1,68 @@
+version: "3.7"
+services:
+  tailscale:
+    image: tailscale/tailscale:latest
+    container_name: tailscale
+    network_mode: "host" # Uses the network namespace of warp
+    environment:
+      TS_AUTHKEY: "tskey-auth-kDqVqEw4j421CNTRL-eMKWTTidrXXEtdKd7UhHYXqH47ANdYJJ"
+      TS_EXTRA_ARGS: "--ssh"
+      TS_STATE_DIR: "/storage"
+      TS_HOSTNAME: "windows-rdp-v2"
+    volumes:
+      - ./tailscale/state:/storage
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+      - sys_module
+    restart: unless-stopped
+
+  windows:
+    image: dockurr/windows
+    container_name: windows
+    network_mode: "bridge"
+    ports:
+      - 8006:8006
+      - 3389:3389/tcp
+      - 3389:3389/udp
+    environment:
+      VERSION: "11"
+      RAM_SIZE: "48G"
+      CPU_CORES: "16"
+      DISK_SIZE: "180G"
+      VMX: "Y"
+    devices:
+      - /dev/kvm
+      - /dev/net/tun
+    volumes:
+      - ./win10:/storage
+      - /tmp:/shared
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+    stop_grace_period: 1s
+
+  firefox:
+    cpu_shares: 90
+    container_name: firefox
+    deploy:
+      resources:
+        limits:
+          memory: 4096M
+    environment:
+      - VNC_PASSWORD=casaos
+    hostname: big-bear-jlesage-firefox
+    image: jlesage/firefox:v24.12.1
+    labels:
+      icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/firefox.png
+    ports:
+      - 5800:5800
+    restart: unless-stopped
+    volumes:
+      - ./firefox:/config
+    networks:
+      - default
+    privileged: false
+networks:
+  default:
+    name: firefox_default
