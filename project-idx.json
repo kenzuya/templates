@@ -1,0 +1,315 @@
+{
+  "extVersion": "1.28.27",
+  "name": "Project IDX - Windows RDP",
+  "icon": "riGlobalLine",
+  "table": [
+    {
+      "id": "Msuvh",
+      "name": "URL",
+      "type": "string"
+    }
+  ],
+  "version": "1.28.27",
+  "drawflow": {
+    "nodes": [
+      {
+        "type": "BlockBasic",
+        "data": {
+          "disableBlock": false,
+          "description": "",
+          "type": "manual",
+          "interval": 60,
+          "delay": 5,
+          "date": "",
+          "time": "00:00",
+          "url": "",
+          "shortcut": "",
+          "activeInInput": false,
+          "isUrlRegex": false,
+          "days": [],
+          "contextMenuName": "",
+          "contextTypes": [],
+          "parameters": [],
+          "preferParamsInTab": false,
+          "observeElement": {
+            "selector": "",
+            "baseSelector": "",
+            "matchPattern": "",
+            "targetOptions": {
+              "subtree": false,
+              "childList": true,
+              "attributes": false,
+              "attributeFilter": [],
+              "characterData": false
+            },
+            "baseElOptions": {
+              "subtree": false,
+              "childList": true,
+              "attributes": false,
+              "attributeFilter": [],
+              "characterData": false
+            }
+          },
+          "settings": {
+            "blockTimeout": 0,
+            "debugMode": false
+          },
+          "triggers": [
+            {
+              "type": "manual",
+              "data": {
+                "disableBlock": false,
+                "description": "",
+                "type": "manual",
+                "interval": 60,
+                "delay": 5,
+                "date": "",
+                "time": "00:00",
+                "url": "",
+                "shortcut": "",
+                "activeInInput": false,
+                "isUrlRegex": false,
+                "days": [],
+                "contextMenuName": "",
+                "contextTypes": [],
+                "parameters": [
+                  {
+                    "data": {
+                      "masks": [
+                        {
+                          "isRegex": false,
+                          "lazy": false,
+                          "mask": ""
+                        }
+                      ],
+                      "required": true,
+                      "unmaskValue": false,
+                      "useMask": false
+                    },
+                    "defaultValue": "https://idx.google.com/u/0/ubuntu-node-1-2319551",
+                    "description": "",
+                    "id": "9kST",
+                    "name": "projectUrl",
+                    "placeholder": "Text",
+                    "type": "string"
+                  },
+                  {
+                    "data": {
+                      "masks": [],
+                      "required": false,
+                      "unmaskValue": false,
+                      "useMask": false
+                    },
+                    "defaultValue": "ubuntu-node-1-2319551",
+                    "description": "",
+                    "id": "L0lI",
+                    "name": "projectId",
+                    "placeholder": "Text",
+                    "type": "string"
+                  }
+                ],
+                "preferParamsInTab": false,
+                "observeElement": {
+                  "selector": "",
+                  "baseSelector": "",
+                  "matchPattern": "",
+                  "targetOptions": {
+                    "subtree": false,
+                    "childList": true,
+                    "attributes": false,
+                    "attributeFilter": [],
+                    "characterData": false
+                  },
+                  "baseElOptions": {
+                    "subtree": false,
+                    "childList": true,
+                    "attributes": false,
+                    "attributeFilter": [],
+                    "characterData": false
+                  }
+                },
+                "settings": {
+                  "blockTimeout": 0,
+                  "debugMode": false
+                }
+              },
+              "id": "dInED"
+            },
+            {
+              "id": "VUaD_",
+              "type": "on-startup",
+              "data": null
+            }
+          ]
+        },
+        "events": {},
+        "id": "5tYqAHs4I6BmSXSXRmRVC",
+        "label": "trigger",
+        "position": {
+          "x": 96,
+          "y": 59
+        }
+      },
+      {
+        "type": "BlockBasic",
+        "data": {
+          "disableBlock": false,
+          "description": "Go to Website",
+          "url": "https://idx.google.com/music-app-09455401",
+          "userAgent": "",
+          "active": true,
+          "tabZoom": 1,
+          "inGroup": false,
+          "waitTabLoaded": false,
+          "updatePrevTab": false,
+          "customUserAgent": false
+        },
+        "events": {},
+        "id": "5qv0pkf",
+        "label": "new-tab",
+        "position": {
+          "x": 388,
+          "y": 59
+        }
+      },
+      {
+        "type": "BlockDelay",
+        "data": {
+          "disableBlock": false,
+          "time": "900000"
+        },
+        "events": {},
+        "id": "lve9lul",
+        "label": "delay",
+        "position": {
+          "x": 680,
+          "y": 59
+        }
+      },
+      {
+        "type": "BlockBasic",
+        "data": {
+          "disableBlock": false,
+          "description": "Go to Website",
+          "url": "https://idx.google.com/music-app-09455401",
+          "userAgent": "",
+          "active": true,
+          "tabZoom": 1,
+          "inGroup": false,
+          "waitTabLoaded": false,
+          "updatePrevTab": true,
+          "customUserAgent": false
+        },
+        "events": {},
+        "label": "new-tab",
+        "id": "b05yfmv",
+        "position": {
+          "x": 972,
+          "y": 59
+        }
+      }
+    ],
+    "edges": [
+      {
+        "type": "custom",
+        "updatable": true,
+        "selectable": true,
+        "markerEnd": "arrowclosed",
+        "sourceHandle": "5tYqAHs4I6BmSXSXRmRVC-output-1",
+        "targetHandle": "5qv0pkf-input-1",
+        "source": "5tYqAHs4I6BmSXSXRmRVC",
+        "target": "5qv0pkf",
+        "data": {},
+        "events": {},
+        "id": "vueflow__edge-5tYqAHs4I6BmSXSXRmRVC5tYqAHs4I6BmSXSXRmRVC-output-1-5qv0pkf5qv0pkf-input-1",
+        "sourceX": 308.01608395826895,
+        "sourceY": 95.00229148502984,
+        "targetX": 367.99157361089357,
+        "targetY": 95.00229148502984
+      },
+      {
+        "sourceHandle": "5qv0pkf-output-1",
+        "targetHandle": "lve9lul-input-1",
+        "type": "custom",
+        "source": "5qv0pkf",
+        "target": "lve9lul",
+        "updatable": true,
+        "selectable": true,
+        "data": {},
+        "events": {},
+        "class": "source-5qv0pkf-output-1 target-lve9lul-input-1",
+        "markerEnd": "arrowclosed",
+        "id": "vueflow__edge-5qv0pkf5qv0pkf-output-1-lve9lullve9lul-input-1",
+        "sourceX": 599.9922114013207,
+        "sourceY": 95.00229148502984,
+        "targetX": 659.9916607370138,
+        "targetY": 117.84188115163374
+      },
+      {
+        "sourceHandle": "lve9lul-output-1",
+        "targetHandle": "b05yfmv-input-1",
+        "type": "custom",
+        "source": "lve9lul",
+        "target": "b05yfmv",
+        "updatable": true,
+        "selectable": true,
+        "data": {},
+        "events": {},
+        "class": "source-lve9lul-output-1 target-b05yfmv-input-1",
+        "markerEnd": "arrowclosed",
+        "id": "vueflow__edge-lve9lullve9lul-output-1-b05yfmvb05yfmv-input-1",
+        "sourceX": 891.9922985274409,
+        "sourceY": 117.84188115163374,
+        "targetX": 951.9914864847733,
+        "targetY": 95.00229148502984
+      },
+      {
+        "sourceHandle": "b05yfmv-output-1",
+        "targetHandle": "lve9lul-input-1",
+        "type": "custom",
+        "source": "b05yfmv",
+        "target": "lve9lul",
+        "updatable": true,
+        "selectable": true,
+        "data": {},
+        "events": {},
+        "class": "source-b05yfmv-output-1 target-lve9lul-input-1",
+        "markerEnd": "arrowclosed",
+        "id": "vueflow__edge-b05yfmvb05yfmv-output-1-lve9lullve9lul-input-1",
+        "sourceX": 1183.9921242752005,
+        "sourceY": 95.00229148502984,
+        "targetX": 659.9916607370138,
+        "targetY": 117.84188115163374
+      }
+    ],
+    "position": [
+      -45.1096532333645,
+      310.1815057794439
+    ],
+    "zoom": 1.1933770696657293,
+    "viewport": {
+      "x": -45.1096532333645,
+      "y": 310.1815057794439,
+      "zoom": 1.1933770696657293
+    }
+  },
+  "settings": {
+    "publicId": "",
+    "blockDelay": 0,
+    "saveLog": true,
+    "debugMode": true,
+    "restartTimes": 3,
+    "notification": true,
+    "execContext": "popup",
+    "reuseLastState": false,
+    "inputAutocomplete": true,
+    "onError": "stop-workflow",
+    "executedBlockOnWeb": true,
+    "insertDefaultColumn": false,
+    "defaultColumnName": "column",
+    "tabLoadTimeout": 30000
+  },
+  "globalData": "{\n\t\"key\": \"value\"\n}",
+  "description": "",
+  "includedWorkflows": {}
+}
