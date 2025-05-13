@@ -10,6 +10,11 @@ systemctl unmask docker
 systemctl unmask docker.socket
 systemctl unmask containerd
 
+ifconfig eth0 mtu 1500 up
+ifconfig docker0 mtu 1500 up
+
+echo \"MTU Size telah dinaikkan menjadi 1500.\"
+
 echo \"Docker services sudah di-unmask.\"
 
 # Start docker services
