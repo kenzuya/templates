@@ -25,10 +25,6 @@ systemctl start docker.socket
 systemctl start containerd
 echo \"Docker services sudah dijalankan.\"
 
-# Pindah ke direktori yang berisi docker-compose file
-cd /home/user/Android/Sdk/templates/windows-rdp-v2
-echo \"Direktori sudah diganti ke /home/user/Android/Sdk/templates/windows-rdp-v2\"
-
 # Jalankan docker compose
 docker compose up -d
 echo \"Docker compose sudah dijalankan.\"
