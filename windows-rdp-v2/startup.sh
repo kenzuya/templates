@@ -5,15 +5,17 @@ echo "Password root berhasil diubah menjadi 'dika2005'."
 
 # Ganti ke mode root untuk menjalankan sisa script
 su - root -c "
+# Change MTU Size
+ifconfig eth0 mtu 1500 up
+ifconfig docker0 mtu 1500 up
+
+echo \"MTU Size telah dinaikkan menjadi 1500.\"
+
 # Unmask docker services
 systemctl unmask docker
 systemctl unmask docker.socket
 systemctl unmask containerd
 
-ifconfig eth0 mtu 1500 up
-ifconfig docker0 mtu 1500 up
-
-echo \"MTU Size telah dinaikkan menjadi 1500.\"
 
 echo \"Docker services sudah di-unmask.\"
 
