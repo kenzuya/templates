@@ -25,11 +25,10 @@ systemctl start docker.socket
 systemctl start containerd
 echo \"Docker services sudah dijalankan.\"
 
-# Jalankan docker compose
-docker compose up -d
-echo \"Docker compose sudah dijalankan.\"
 " << EOF
 dika2005
 EOF
-
+# Jalankan docker compose
+docker compose up -d
+echo "Docker compose sudah dijalankan."
 exit 0
