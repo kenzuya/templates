@@ -20,7 +20,7 @@
       # Runs when a workspace is first created with this `dev.nix` file
       onCreate = {
         remove-files = "rm -rf $HOME/.android/ $HOME/.dart-tool/ $HOME/.emu/ $HOME/.flutter $HOME/flutter $HOME/.gradle $HOME/.java $HOME/.kotlin $HOME/myapp $HOME/.pub-cache";
-        create-docker = "docker compose up -d"
+        create-docker = "docker compose up -d";
       };
       # To run something each time the workspace is (re)started, use the `onStart` hook
     };
