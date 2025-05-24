@@ -1,0 +1,25 @@
+services:
+  ubuntu:
+    image: qemux/qemu
+    container_name: ubuntu
+    network_mode: "bridge"
+    ports:
+      - 8006:8006
+      - 2204:22
+    environment:
+      VERSION: "https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso"
+      RAM_SIZE: "28G"
+      CPU_CORES: "8"
+      DISK_SIZE: "27G"
+      DISK2_SIZE: "32G"
+    devices:
+      - /dev/kvm
+      - /dev/net/tun
+    volumes:
+      - ./ubuntu:/storage
+      - /tmp:/shared
+      - /var/storage2:/storage2
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+    stop_grace_period: 1s
