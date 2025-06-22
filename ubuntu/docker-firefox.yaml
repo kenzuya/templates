@@ -1,0 +1,25 @@
+services:
+  big-bear-jlesage-firefox:
+    cpu_shares: 90
+    container_name: big-bear-jlesage-firefox
+    deploy:
+      resources:
+        limits:
+          memory: 2048M
+    environment:
+      - VNC_PASSWORD=casaos
+    hostname: big-bear-jlesage-firefox
+    image: jlesage/firefox:v24.12.1
+    labels:
+      icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/firefox.png
+    ports:
+      - 5800:5800
+    restart: unless-stopped
+    volumes:
+      - /home/user/Public/firefox:/config
+    networks:
+      - default
+    privileged: false
+networks:
+  default:
+    name: big-bear-jlesage-firefox_default
