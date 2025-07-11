@@ -6,6 +6,7 @@
     pkgs.unzip
     pkgs.tailscale
     pkgs.openssh
+    pkgs.fuse3
   ];
   # Sets environment variables in the workspace
   env = {};
