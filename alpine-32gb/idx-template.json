@@ -1,0 +1,12 @@
+{
+  "name": "Alpine Linux 32GB",
+  "description": "Create VM with Alpine Linux 32GB RAM",
+  "categories": [
+    "Linux"
+  ],
+  "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjeCkAymJ4J0xupREn-3Lg1fU094TkO3GMJA&s",
+  "publisher": "kenzuya",
+  "host": {
+    "virtualization": true
+  }
+}

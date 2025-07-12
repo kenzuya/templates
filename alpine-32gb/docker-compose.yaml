@@ -1,0 +1,22 @@
+services:
+  alpine:
+    image: qemux/qemu
+    container_name: alpine
+    network_mode: "bridge"
+    ports:
+      - 8006:8006
+      - 2204:22
+    environment:
+      BOOT: "alpine"
+      RAM_SIZE: "28G"
+      CPU_CORES: "8"
+      DISK_SIZE: "15G"
+    devices:
+      - /dev/kvm
+      - /dev/net/tun
+    volumes:
+      - ./alpine:/storage
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+    stop_grace_period: 1s
