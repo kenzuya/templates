@@ -13,14 +13,12 @@
     {
       "id": "tailscaleAuthKey",
       "name": "Tailscale Auth Key",
-      "type": "text",
-      "required": true
+      "type": "text"
     },
     {
       "id": "tailscaleHostname",
       "name": "Tailscale Hostname",
-      "type": "text",
-      "required": true
+      "type": "text"
     }
   ]
 }
