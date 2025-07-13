@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  workspace:
+    build: .
+    image: workspace
+    container_name: workspace
+    hostname: workspace
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    environment:
+      - TZ=Asia/Jakarta
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
