@@ -21,7 +21,7 @@
       "name": "Tailscale Hostname",
       "type": "text",
       "default": "workspace",
-      "required": false
+      "required": true
     }
   ]
 }
