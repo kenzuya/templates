@@ -1,10 +1,10 @@
 {
-  "name": "Alpine Linux 32GB",
-  "description": "Create VM with Alpine Linux 32GB RAM",
+  "name": "Workspace Dev",
+  "description": "Create a workspace with Tailscale, Docker, and Bun",
   "categories": [
     "Linux"
   ],
-  "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjeCkAymJ4J0xupREn-3Lg1fU094TkO3GMJA&s",
+  "icon": "https://w7.pngwing.com/pngs/503/133/png-transparent-ubuntu-plain-logo-icon-thumbnail.png",
   "publisher": "kenzuya",
   "host": {
     "virtualization": true
