@@ -6,14 +6,11 @@ services:
     container_name: workspace
     hostname: workspace
     volumes:
-      - ./workspace:/root/workspace
+      - ./Projects:/root/Projects
     devices:
       - /dev/net/tun:/dev/net/tun
     environment:
       - TZ=Asia/Jakarta
-      - TS_AUTHKEY={{TS_AUTHKEY}}
-      - TS_HOSTNAME={{TS_HOSTNAME}}
-      - TS_EXTRA_ARGS=--ssh
     cap_add:
       - NET_ADMIN
     restart: unless-stopped

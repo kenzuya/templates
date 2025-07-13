@@ -8,17 +8,5 @@
   "publisher": "kenzuya",
   "host": {
     "virtualization": true
-  },
-  "params": [
-    {
-      "id": "tailscaleAuthKey",
-      "name": "Tailscale Auth Key",
-      "type": "text"
-    },
-    {
-      "id": "tailscaleHostname",
-      "name": "Tailscale Hostname",
-      "type": "text"
-    }
-  ]
+  }
 }
