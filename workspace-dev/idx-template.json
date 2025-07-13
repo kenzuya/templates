@@ -20,7 +20,6 @@
       "id": "TS_HOSTNAME",
       "name": "Tailscale Hostname",
       "type": "text",
-      "default": "workspace",
       "required": true
     }
   ]
