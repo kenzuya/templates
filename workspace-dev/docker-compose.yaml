@@ -5,10 +5,14 @@ services:
     image: workspace
     container_name: workspace
     hostname: workspace
+    volumes:
+      - ./workspace:/root/workspace
     devices:
       - /dev/net/tun:/dev/net/tun
     environment:
       - TZ=Asia/Jakarta
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_HOSTNAME=${TS_HOSTNAME}
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
