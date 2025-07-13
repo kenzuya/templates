@@ -22,3 +22,8 @@ This project provides simple templates for quickly creating VMs on Google Projec
 <a href="https://idx.google.com/new?template=https://github.com/kenzuya/templates/tree/main/alpine-32gb">
   <img height="32" alt="Try in IDX" src="https://cdn.idx.dev/btn/try_dark_32.svg">
 </a>
+
+### Development Workspace
+<a href="https://idx.google.com/new?template=https://github.com/kenzuya/templates/tree/main/workspace-dev">
+  <img height="32" alt="Try in IDX" src="https://cdn.idx.dev/btn/try_dark_32.svg">
+</a>
