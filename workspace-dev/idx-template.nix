@@ -14,7 +14,7 @@
         cp ${./Dockerfile} "$out"/Dockerfile
         cp ${./docker-compose.yaml} "$out"/docker-compose.yaml
         # Replace placeholders in docker-compose.yaml with environment variables
-        sed -i "s|\\${TS_AUTHKEY}|${TS_AUTHKEY}|g" "$out"/docker-compose.yaml
-        sed -i "s|\\${TS_HOSTNAME}|${TS_HOSTNAME}|g" "$out"/docker-compose.yaml
+        sed -i "s|{{TS_AUTHKEY}}|${TS_AUTHKEY}|g" "$out"/docker-compose.yaml
+        sed -i "s|{{TS_HOSTNAME}}|${TS_HOSTNAME}|g" "$out"/docker-compose.yaml
     '';
 }
