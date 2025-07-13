@@ -14,8 +14,8 @@
         cp ${./Dockerfile} "$out"/Dockerfile
         cp ${./docker-compose.yaml} "$out"/docker-compose.yaml
         # Export TS_AUTHKEY and TS_HOSTNAME as environment variables
-        export TS_AUTHKEY=${TS_AUTHKEY}
-        export TS_HOSTNAME=${TS_HOSTNAME}
+        export TS_AUTHKEY=${tailscaleAuthKey}
+        export TS_HOSTNAME=${tailscaleHostname}
         # Replace placeholders in docker-compose.yaml with environment variables
         sed -i "s|{{TS_AUTHKEY}}|$TS_AUTHKEY|g" "$out"/docker-compose.yaml
         sed -i "s|{{TS_HOSTNAME}}|$TS_HOSTNAME|g" "$out"/docker-compose.yaml

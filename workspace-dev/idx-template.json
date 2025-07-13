@@ -11,13 +11,13 @@
   },
   "params": [
     {
-      "id": "TS_AUTHKEY",
+      "id": "tailscaleAuthKey",
       "name": "Tailscale Auth Key",
       "type": "text",
       "required": true
     },
     {
-      "id": "TS_HOSTNAME",
+      "id": "tailscaleHostname",
       "name": "Tailscale Hostname",
       "type": "text",
       "required": true
