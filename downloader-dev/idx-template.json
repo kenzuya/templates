@@ -1,0 +1,12 @@
+{
+  "name": "Downloader Dev",
+  "description": "Create a workspace with Tailscale, Docker, and Bun",
+  "categories": [
+    "Linux"
+  ],
+  "icon": "https://w7.pngwing.com/pngs/503/133/png-transparent-ubuntu-plain-logo-icon-thumbnail.png",
+  "publisher": "kenzuya",
+  "host": {
+    "virtualization": true
+  }
+}
